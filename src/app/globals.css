@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --color-primary: #0f4c75;
+  --color-primary-light: #3282b8;
+  --color-text: #dee2e6;
+  --color-text-dark: #333538;
+  --color-background-100: #2d3c44;
+  --color-background-500: #32383f;
+  --color-background-900: #1b262c;
+  --color-red: #fa9884;
+  --color-red-dark: #e74646;
+}
+
+img{
+  background-color: #fff;
+  transition: 0.3s ease all;
+  -webkit-transition: .3s ease all;
+  -moz-transition: .3s ease all;
+  -ms-transition: .3s ease all;
+  -o-trasnsition: .3 ease all;
+}
+
+img:hover{
+  scale: 102%;
+}
+
+.container {
+  max-width: 900px; 
+  margin: 0 auto;
+  padding: 0 1rem;
+  background-color: #1b262c;
+}
+
+body {
+  background-color: #000000; 
+}
+
+.loading {
+  width:50px;
+  height:50px;
+  --c:radial-gradient(farthest-side,var(--color-primary-light) 92%,#0000);
+  background: 
+    var(--c) 50% 0,
+    var(--c) 50% 100%,
+    var(--c) 100% 50%,
+    var(--c) 0    50%;
+  background-size:12px 12px;
+  background-repeat:no-repeat;
+  animation:s7 1s infinite;
+}
+@keyframes s7 {to{transform: rotate(.5turn)}}
+
+.anime-title {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-line-clamp: 3; /* Maksimal 3 baris */
+  -webkit-box-orient: vertical;
+  max-height: 3em; /* Set maksimal tinggi */
+  overflow: hidden;
+}
+
