@@ -8,24 +8,25 @@ import { getAnimeResponse } from "../libs/api-libs";
 import AnimeUpdate from "@/components/AnimeList";
 
 const Page = () => {
-    const server = "kuronime";
-    const [page, setPage] = useState(1)
-    const [populerAnime, setPopulerAnime] = useState([])
+    // const server = "kuronime";
+    // const [page, setPage] = useState(1)
+    // const [populerAnime, setPopulerAnime] = useState([])
 
-    const fetchData = async() => {
-        const populerAnime = await getAnimeResponse("popular", `page=${page}`)
-        setPopulerAnime(populerAnime)
-    }
+    // const fetchData = async() => {
+    //     const populerAnime = await getAnimeResponse("popular", `page=${page}`)
+    //     setPopulerAnime(populerAnime)
+    // }
 
-    useEffect(() => {
-        fetchData()
-    }, [page])
+    // useEffect(() => {
+    //     fetchData()
+    // }, [page])
     return(
         <> 
-        <div className="container text-white">
-            <HeaderMenu title={`Anime Populer #${page}`}/>
+        <div className="container text-white min-h-screen">
+            <h1>POPULER....</h1>
+            {/* <HeaderMenu title={`Anime Populer #${page}`}/>
             <AnimeUpdate api={populerAnime}/>
-            <Pagination page={page} lastPage={populerAnime.maxPage} setPage={setPage}/>
+            <Pagination page={page} lastPage={populerAnime.maxPage} setPage={setPage}/> */}
         </div>
         </>
     )
