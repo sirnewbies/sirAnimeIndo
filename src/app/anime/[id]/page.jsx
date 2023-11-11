@@ -1,12 +1,13 @@
 import { getAnimeResponse } from "@/app/libs/api-libs";
 import Image from "next/image";
 import React from "react";
+import EpisodeList from "@/components/EpisodeList";
 
 const Page = async({ params: {id}}) => {
 
     const getDataAnime = await getAnimeResponse(`anime/${id}`)
     const anime = getDataAnime.data
-    console.log(anime)
+    // console.log(anime)
     return(
         <div className="container min-h-screen">
             <div className="pt-5">
@@ -22,13 +23,13 @@ const Page = async({ params: {id}}) => {
                         <p className="pt-2 md:pt-0">Episode: {anime.episode_lists.length}</p>
                         <p className="pt-2 md:pt-0">Tahun: {anime.release_date}</p>
                         <p className="pt-2 md:pt-0">Genre: {anime.genres.map(genre => genre.name).join(', ')}</p>
-                        <p className="pt-2 md:pt-3">Sinopsis: {anime.synopsis}</p>
+                        {/* <p className="pt-2 md:pt-3">Sinopsis: {anime.synopsis}</p> */}
+                    <EpisodeList animeId={id}/>
                     </div>
                 </div>
 
                 <div className="pt-5">
-                    <div className="p-4 pt-10 flex sm:flex-nowrap flex-wrap gap-4 text-white rounded bg-color-background-500">
-                    <button>Tonton: (Maaf belum tersedia)</button>
+                    <div className="p-4 pt-10 flex-col sm:flex-nowrap flex-wrap gap-4 text-white rounded bg-color-background-500">
                 </div>
                 </div>
 
